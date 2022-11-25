@@ -46,5 +46,5 @@ export class OrderParentComponent implements OnInit {
       this.receivedTotalPrice= +this.receivedTotalPrice - (prod.Price*prod.count);
     }
   }
-  console.log("Hello From this side");
+  console.log("He llo Fr om this si de");
 }
