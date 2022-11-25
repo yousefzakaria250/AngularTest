@@ -1,0 +1,90 @@
+
+
+<!-- Interpolation Way -->
+<!-- <h1>{{storedata.name}}</h1> -->
+
+<!-- <img src="{{storedata.urlImg}}"> -->
+<!-- ------------------------------  2 ---------------------------------- -->
+<!-- <h1> {{clientName}} </h1> -->
+
+ <!-- property binding  -->
+ <!-- <img [src]="storedata.urlImg">  -->
+ <!-- <img src="assets/cms-image-000001769.jpg" class="img-fluid"> -->
+
+<!-- ---------------------------------------3---------------------------- -->
+
+<!-- (3)	<h3> tag to display this text: “We offer an explicit discount of:” -->
+     <!-- + Discount value from the discount property (Use angular Expression {{}}). [Bonus] -->
+
+<!-- <h3> "We offer an explicit discount of: " + {{productLits[1].discount}}</h3> -->
+
+<!-- ------------------------- 4 ----------------------------------------------------------- -->
+ <!-- <img [src]="storeData2.coverImg" *ngIf="isshow">
+<div *ngIf="!isshow">"Thanks for purchasing from our Store" + {{clientName}}</div>
+ <button class="btn btn-primary" (click)="Toggle()"> Buy </button>  -->
+
+<!-- ------------------------------------------------ Assignment 2 ------------------------------------ -->
+
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">No:</th>
+        <th scope="col">Name</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Discount</th>
+        <th scope="col">Image</th>
+        <th scope="col">Price</th>
+        <th scope="col">Count</th>
+        <th scope="col">Buy</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let prd of prodCat;let temp=index;" [hidden]="prd.quantity==0" [style.background-color]="(prd.quantity==1)?'gray':'lightblue'">
+            <td>{{temp+1}}</td>
+            <td>{{prd.name}}</td>
+            <td>{{prd.quantity}}</td> 
+             <!-- <ng-container *ngIf="prd.quantity==0;else outofstock">{{prd.quantity}}</ng-container>  --> 
+             <td>{{prd.discount}}</td>
+            <td><img src="{{prd.img}}" width="20%" height="60px"></td>
+            <td>{{prd.price}}</td>
+            <td><input class="form-control" type="number" #countvalue></td>
+            <!-- <td><button class="btn btn-primary" [hidden]="prd.quantity==0" (click)="decrease(prd)">Add To Cart</button></td>  -->
+            <td><button class="btn btn-primary" [disabled]="prd.quantity==0" (click)="updateProduct(prd ,countvalue.value)">Add To Cart</button></td> 
+            <!-- <td><button class="btn btn-primary" [disabled]="prd.quantity==0" (click)="updateProduct(prd)">Add To Cart</button></td> -->
+
+</tr>
+    </tbody>
+  </table>
+ 
+
+  <!-- <h1> Total Price : {{totalPrice}}</h1> -->
+
+
+
+
+
+
+
+<!-- ---------------------------------------- Exercies------------------------ -->
+
+<!-- **ngFor="let item of list" -->
+
+<!-- <ul>
+    <li *ngFor="let item of storedata.branches">{{item}}</li>
+</ul> -->
+
+
+ <!-- Interface -->
+<!-- <h1> The name from Interface : {{storeData2.name}}</h1>
+<img [src]="storeData2.coverImg" *ngIf="isshow">
+<button class="btn btn-primary" (click)="Toggle()"></button>
+<ul>
+    <li *ngFor="let i of storeData2.branches">{{i}}</li>
+</ul>
+
+<input type="text" class="form-control" [(ngModel)]="userFeedback">
+
+{{userFeedback}} -->
+

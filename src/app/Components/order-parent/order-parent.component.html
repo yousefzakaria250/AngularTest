@@ -1,0 +1,51 @@
+
+<div class="mb=4">
+
+<label>Categoriez : </label>
+<select class="form-control" [(ngModel)]="selectedCatId">
+    <option [value] = "0">All</option>
+    <option *ngFor="let item of catlist" [value] ="item.id" >{{item.name}}</option>
+</select>
+
+</div>
+
+
+ <!-- Adding property binding on <app-home></app-home> -->
+
+<app-home  (totalPriceChanged) ="showProduct($event)" [receivedId] ="selectedCatId"></app-home>
+
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">No:</th>
+        <th scope="col">Name</th>
+        <!-- <th scope="col">Image</th> -->
+        <th scope="col">Price</th>
+        <th scope="col">Count</th>
+     
+        
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let prd of productList;let temp=index;" [hidden]="prd.quantity==0">
+            <td>{{temp+1}}</td>
+            <td>{{prd.name}}</td>
+            <!-- <td>{{prd.quantity}}</td>  -->
+             <!-- <ng-container *ngIf="prd.quantity==0;else outofstock">{{prd.quantity}}</ng-container>  --> 
+             <!-- <td>{{prd.discount}}</td> -->
+            <!-- <td><img src="{{prd.img}}" width="20%" height="60px"></td> -->
+            <td>{{prd.price}}</td>
+            <td>{{prd.count}}</td>
+            <td><button class="btn btn-danager" (click)="delete(prd)">delete</button></td>
+            <!-- <td><button class="btn btn-primary" [hidden]="prd.quantity==0" (click)="decrease(prd)">Add To Cart</button></td>  -->
+            <!-- <td><button class="btn btn-primary" [disabled]="prd.quantity==0" (click)="updateProduct(prd)">Add To Cart</button></td>  -->
+            <!-- <td><button class="btn btn-primary" [disabled]="prd.quantity==0" (click)="updateProduct(prd)">Add To Cart</button></td> -->
+
+</tr>
+    </tbody>
+  </table>
+
+  <button   class="btn btn-info" (click)="calculate()">TotalPrice</button>
+  <input [(ngModel)]="receivedTotalPrice">
+ 
