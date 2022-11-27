@@ -14,6 +14,7 @@ import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
 import { NotFoundPageComponent } from './Components/NotFoundPage/not-found-page/not-found-page.component';
 import { MainComponentComponent } from './main-component/main-component.component';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { MainComponentComponent } from './main-component/main-component.componen
     ParentComponent,
     ChildComponent,
     NotFoundPageComponent,
-    MainComponentComponent
+    MainComponentComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
