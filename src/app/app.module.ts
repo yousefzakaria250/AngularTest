@@ -14,7 +14,11 @@ import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
 import { NotFoundPageComponent } from './Components/NotFoundPage/not-found-page/not-found-page.component';
 import { MainComponentComponent } from './main-component/main-component.component';
+<<<<<<< HEAD
 import { AdminComponent } from './admin/admin.component';
+=======
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+>>>>>>> Fix
 
 @NgModule({
   declarations: [
@@ -29,7 +33,11 @@ import { AdminComponent } from './admin/admin.component';
     ChildComponent,
     NotFoundPageComponent,
     MainComponentComponent,
+<<<<<<< HEAD
     AdminComponent
+=======
+    PageNotFoundComponent
+>>>>>>> Fix
   ],
   imports: [
     BrowserModule,
